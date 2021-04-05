@@ -14,12 +14,14 @@
             function updateClocks() {
                 var nowUtc = DateTime.utc();
                 var nowUgt = nowUtc.plus({ years: 1286 })
+                var nowLocal = DateTime.local();
 
                 document.getElementById('time-ugt').innerHTML = nowUgt.toFormat('tt')
                 document.getElementById('date-ugt').innerHTML = nowUgt.toFormat("cccc, MMMM d, y '(Universal Galactic Time)'")
 
-                document.getElementById('time-utc').innerHTML = nowUtc.toFormat('tt')
-                document.getElementById('date-utc').innerHTML = nowUtc.toFormat("cccc, MMMM d, y '(Coordinated Universal Time)'")
+                document.getElementById('time-utc').innerHTML = nowLocal.toFormat('tt')
+                document.getElementById('date-utc').innerHTML = nowLocal.toFormat("cccc, MMMM d, y '('ZZZZZ')'")
+                document.getElementById('location-utc').innerHTML = nowLocal.toFormat("'Time in ' z', Earth, Sol System'")
             }
             
             window.onload = updateClocks;
@@ -54,7 +56,7 @@
                     <p id='date-utc' class="date">
                     
                     </p>
-                    <span class="date">Time in Earth, Sol System</span>
+                    <span id='location-utc' class="date">Time in Earth, Sol System</span>
                 </p>
             </div>
         </div>
