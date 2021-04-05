@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Universal Galactic Time</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
+        <script>
+            var DateTime = luxon.DateTime;
+            function updateClocks() {
+                var nowUtc = DateTime.utc();
+                var nowUgt = nowUtc.plus({ years: 1286 })
+
+                document.getElementById('time-ugt').innerHTML = nowUgt.toFormat('tt')
+                document.getElementById('date-ugt').innerHTML = nowUgt.toFormat("cccc, MMMM d, y '(Universal Galactic Time)'")
+
+                document.getElementById('time-utc').innerHTML = nowUtc.toFormat('tt')
+                document.getElementById('date-utc').innerHTML = nowUtc.toFormat("cccc, MMMM d, y '(Coordinated Universal Time)'")
+
+                document.getElementById('current-time-ugt').innerHTML = "It is currently " + nowUgt.toFormat("'<b>'tt'</b>' 'on' '<b>'cccc, MMMM d, y'</b>' 'Universal Galactic Time.'")
+                document.getElementById('current-time-utc').innerHTML = "It is currently " + nowUtc.toFormat("'<b>'tt'</b>' 'on' '<b>'cccc, MMMM d, y'</b>' 'Coordinated Universal Time.'")
+            }
+            
+            window.onload = updateClocks;
+            window.setInterval(updateClocks, 1000);
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="clock-header">
+                Galactic Time Clock
+            </div>
+            <b class="tz-header">🌌 Elite Dangerous</b>
+            <div>
+                <p id='time-ugt' class="time">
+
+                </p>
+                <p id='date-ugt' class="date">
+                    
+                </p>
+            </div>
+            <hr />
+            <br />
+            <b class="tz-header">🌎 Real World</b>
+            <div>
+                <p id='time-utc' class="time">
+
+                </p>
+                <p id='date-utc' class="date">
+                    
+                </p>
+            </div>
+        </div>
+        <br />
+        <div style="color: lightgrey; font-size: 0.85rem;">
+            Galactic clock &copy; 2021 abyssal
+
+        </div>
+    </body>
+</html>

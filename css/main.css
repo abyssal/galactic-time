@@ -1,0 +1,43 @@
+body {
+    font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #1d1e1f;
+    color: white;
+}
+
+body {
+    margin: auto;
+    width: 75%;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 60%);
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 3px solid #bb5500;
+}
+
+.clock-header {
+    background-color: #bb5500;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.tz-header {
+    background-color: #5f4535;
+    padding: 3px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.time {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.date {
+    color: lightgrey;
+}
